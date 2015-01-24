@@ -1,16 +1,18 @@
 'use strict';
 
-
 /***********************************************************************************************************************************************
- * VALENCE
+ * VALENCE DATA
  ***********************************************************************************************************************************************
  * @description
  */
-angular.module('valence', [])
-  .service('Valence', ['valence.model', 'valence.console',  function(model, console) {
-
+angular.module('valence')
+  .service('valence.struct', ['valence.struct.Array', 'valence.struct.Object', 'valence.struct.String', function(Array, Object, String) {
     return {
-      model: model,
-      console: console
+      Object: Object,
+      Array: Array,
+      String: String,
+      Number: 'Number',
+      List: 'List',
+      Graph: 'Graph'
     };
   }]);

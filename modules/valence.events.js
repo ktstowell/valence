@@ -1,16 +1,22 @@
 'use strict';
 
-
 /***********************************************************************************************************************************************
- * VALENCE
+ * VALENCE EVENTS
  ***********************************************************************************************************************************************
  * @description
  */
-angular.module('valence', [])
-  .service('Valence', ['valence.model', 'valence.console',  function(model, console) {
 
+angular.module('valence')
+  .service('valence.events', function() {
     return {
-      model: model,
-      console: console
+      resource: {
+        loaded: 'resource.loaded',
+        updated: 'resource.updated',
+        cleared: 'resource.cleared'
+      },
+      resources: {
+        loaded: 'resources.loaded',
+        flush: 'resources.flush'
+      }
     };
-  }]);
+  });
